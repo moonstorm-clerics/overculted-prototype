@@ -130,23 +130,6 @@ var actions = []
 func can_execute_any():
 	return machine and machine.can_act()
 
-## hotel data ##########################################################################
-
-func hotel_data():
-	var d = {health=health, name=name, is_dead=is_dead}
-	if not display_name in ["", null]: # yay types! woo!
-		d["display_name"] = display_name
-	d["coins"] = coins
-	d["shrine_gems"] = coins
-	return d
-
-func check_out(data):
-	health = U.get_(data, "health", initial_health)
-	is_dead = U.get_(data, "is_dead", is_dead)
-	display_name = U.get_(data, "display_name", display_name)
-	coins = data.get("coins", coins)
-	shrine_gems = data.get("shrine_gems", shrine_gems)
-
 ## shrine_gems #######################################################
 
 func has_shrine_gems(n):
@@ -239,6 +222,7 @@ func clear_forced_movement_target():
 func on_pit_entered():
 	# TODO damage?
 	machine.transit("Fall")
+
 
 	# await get_tree().create_timer(1.0).timeout
 	# Dino.respawn_player({player=self})
@@ -342,6 +326,13 @@ func recover_health(h=null):
 		health += h
 
 	health = clamp(health, 0, initial_health)
+
+# reset the player after death
+func reset():
+	recover_health()
+	is_dead = false
+	create_tween().tween_property(self, "modulate:a", 1.0, 0.4)
+
 
 ## hurt_box ###########################################################
 
