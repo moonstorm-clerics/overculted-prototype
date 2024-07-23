@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://fvuert4j801a"]
+
+[ext_resource type="PackedScene" uid="uid://b4u15tgrq5xnn" path="res://addons/teeb.text_transitions/demo/RichTextLabel.tscn" id="1"]
+[ext_resource type="Script" path="res://addons/teeb.text_transitions/Debugger.gd" id="2"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Prickle.tres" id="3"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Redacted.tres" id="4"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/WFC.tres" id="5"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Console.tres" id="6"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Word.tres" id="7"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Bounce.tres" id="8"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_transitions/resources/Embers.tres" id="9"]
+
+[sub_resource type="GDScript" id="1"]
+
+[sub_resource type="RichTextEffect" id="2"]
+resource_name = "Glide"
+script = SubResource("1")
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1236.0
+offset_bottom = 901.0
+
+[node name="bounce" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]bounce:[/color] [bounce]A long time ago, in a far away place...[/bounce]"
+custom_effects = [ExtResource("8"), ExtResource("6"), ExtResource("9"), SubResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("7"), null, null]
+length = 16.0
+animation_time = 0.5
+
+[node name="console" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]console:[/color] [console id=console]A long time ago, in a far away place...[/console]"
+custom_effects = [ExtResource("8"), ExtResource("6"), ExtResource("9"), SubResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("7"), null, null]
+id = "console"
+length = 1.0
+animation_time = 0.5
+
+[node name="embers" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]embers:[/color] [embers id=embers]A long time ago, in a far away place...[/embers]"
+custom_effects = [ExtResource("8"), ExtResource("6"), ExtResource("9"), SubResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("7"), null, null]
+id = "embers"
+animation_time = 0.5
+
+[node name="prickle" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]prickle:[/color] [prickle id=prickle]A long time ago, in a far away place...[/prickle]"
+custom_effects = [ExtResource("8"), ExtResource("6"), ExtResource("9"), SubResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("7"), null, null]
+id = "prickle"
+length = 16.0
+animation_time = 0.5
+
+[node name="redacted" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]redacted:[/color] [redacted id=redacted]A long time ago, in a far away place...[/redacted]"
+id = "redacted"
+animation_time = 0.5
+
+[node name="wfc" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]wfc:[/color] [wfc id=wfc]A long time ago, in a far away place...[/wfc]"
+id = "wfc"
+length = 32.0
+animation_time = 0.5
+
+[node name="word" parent="VBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+text = "[color=gray]word:[/color] [word id=word]A long time ago, in a far away place...[/word]"
+id = "word"
+length = 4.0
+animation_time = 0.5

@@ -12,7 +12,8 @@ func _ready():
 	stop_button.pressed.connect(_on_stop_pressed)
 
 func _on_play_pressed():
-	Sounds.play(Sounds.S[sound_name_text])
+	pass
+	# Sounds.play(Sounds.S[sound_name_text])
 
 func _on_stop_pressed():
 	Sounds.interrupt(Sounds.S[sound_name_text])

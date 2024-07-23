@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://djy25efgciofx"]
+
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Cuss.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://3emytyxxnw1j" path="res://addons/teeb.text_effects/demo/RichTextLabel.tscn" id="2"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/UwU.tres" id="3"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Rain.tres" id="4"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Heart.tres" id="5"]
+[ext_resource type="RichTextEffect" uid="uid://cpgmlv5404n2f" path="res://addons/teeb.text_effects/resources/ColorMod.tres" id="6"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Number.tres" id="7"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Woo.tres" id="8"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Sparkle.tres" id="9"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Nervous.tres" id="10"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/Jump.tres" id="11"]
+[ext_resource type="RichTextEffect" path="res://addons/teeb.text_effects/resources/L33T.tres" id="12"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1606.0
+offset_bottom = 899.0
+
+[node name="cuss" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]cuss:[/color] What the [cuss]heck[/cuss] are you [cuss]fuckers[/cuss] talking about?"
+custom_effects = [ExtResource("6"), ExtResource("1"), ExtResource("5"), ExtResource("11"), ExtResource("12"), ExtResource("10"), ExtResource("7"), ExtResource("4"), ExtResource("9"), ExtResource("3"), ExtResource("8")]
+
+[node name="heart" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]heart:[/color] [heart]I love you so much!!![/heart]."
+
+[node name="jump" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]jump:[/color] [jump angle=180]Jump up![/jump] [jump]Jump down. [/jump][jump angle=45]To at a 45![/jump] [jump angle=270]To the right![/jump]"
+
+[node name="l33t" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]l33t:[/color] [l33t]Only the top hackers in the biz can read this.[/l33t]"
+
+[node name="nervous" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]nervous:[/color] [nervous]Oh, u-um, I was wo-wondering... if maybe...[/nervous]"
+
+[node name="number" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]number:[/color] [number color=cyan]I'll give you 10 coconuts for 20 shells.[/number]"
+
+[node name="rain" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]rain:[/color] [rain]Rain, rain, go away. Come again later.[/rain]"
+
+[node name="sparkle" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]sparkle:[/color] You aquired the [sparkle c1=darkred c2=black]Evil Sword[/sparkle] and the [sparkle c1=blue c2=aqua]Good Sword[/sparkle]."
+
+[node name="uwu" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]uwu:[/color] [uwu]Leave me alone, I am trying me hardest.[/uwu]"
+
+[node name="woo" parent="VBoxContainer" instance=ExtResource("2")]
+layout_mode = 2
+text = "[color=gray]woo:[/color] You were all like \"[woo]Ooh, look at how smart I am.[/woo]\""
