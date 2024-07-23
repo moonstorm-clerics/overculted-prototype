@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb7fbj7258mh4"]
+
+[ext_resource type="PackedScene" uid="uid://cbkmdov158pc8" path="res://src/entities/harvey_entities/Plot.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c50rr61e7pe3y" path="res://src/entities/harvey_entities/SeedBox.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://d0nbgfv56fvm1" path="res://src/player/TDPlayer.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://kdjxtd0s6qfx" path="res://src/entities/harvey_entities/Tool.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://d1ntbjt8i83ot" path="res://src/entities/harvey_entities/DeliveryBox.tscn" id="6"]
+
+[node name="PlotGym" type="Node2D"]
+position = Vector2(188, 200)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -162.0
+offset_top = -159.0
+offset_right = 234.0
+offset_bottom = 160.0
+mouse_filter = 2
+color = Color(0.298039, 0.270588, 0.270588, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Plot" parent="." instance=ExtResource("1")]
+position = Vector2(-106, 58)
+
+[node name="Tool" parent="." instance=ExtResource("5")]
+position = Vector2(-76, -77)
+
+[node name="SeedBox" parent="." instance=ExtResource("2")]
+position = Vector2(94, -60)
+
+[node name="Player" parent="." instance=ExtResource("3")]
+
+[node name="DeliveryBox" parent="." instance=ExtResource("6")]
+position = Vector2(168, 80)
+rotation = 1.57079

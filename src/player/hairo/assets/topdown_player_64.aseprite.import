@@ -7,7 +7,7 @@ path="res://.godot/imported/topdown_player_64.aseprite-700ede6184f0f72754de72a84
 
 [deps]
 
-source_file="res://src/dino/players/hairo/assets/topdown_player_64.aseprite"
+source_file="res://src/players/hairo/assets/topdown_player_64.aseprite"
 dest_files=["res://.godot/imported/topdown_player_64.aseprite-700ede6184f0f72754de72a844982703.res"]
 
 [params]

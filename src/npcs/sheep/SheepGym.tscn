@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://klp1ph3xr7x1"]
+
+[ext_resource type="Script" path="res://src/DinoGym.gd" id="1_n5axb"]
+[ext_resource type="PackedScene" uid="uid://6sj01yybi4qt" path="res://src/npcs/sheep/Sheep.tscn" id="3_72myu"]
+[ext_resource type="PackedScene" uid="uid://d0nbgfv56fvm1" path="res://src/player/TDPlayer.tscn" id="4_8v4l2"]
+[ext_resource type="PackedScene" uid="uid://bnhchumgoi6s7" path="res://src/entities/fences/FenceTiles.tscn" id="5_ma4vh"]
+
+[node name="SheepGym" type="Node"]
+script = ExtResource("1_n5axb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 12.0
+offset_top = 31.0
+offset_right = 389.0
+offset_bottom = 262.0
+color = Color(0.174225, 0.420002, 0.570602, 1)
+
+[node name="Sheep" parent="." instance=ExtResource("3_72myu")]
+position = Vector2(269, 108)
+display_name = null
+initial_health = null
+run_speed = null
+wander_speed = null
+jump_speed = null
+should_wander = null
+should_notice = null
+
+[node name="Sheep2" parent="." instance=ExtResource("3_72myu")]
+position = Vector2(283, 121)
+display_name = null
+initial_health = null
+run_speed = null
+wander_speed = null
+jump_speed = null
+should_wander = null
+should_notice = null
+
+[node name="Sheep3" parent="." instance=ExtResource("3_72myu")]
+position = Vector2(306, 158)
+display_name = null
+initial_health = null
+run_speed = null
+wander_speed = null
+jump_speed = null
+should_wander = null
+should_notice = null
+
+[node name="Sheep4" parent="." instance=ExtResource("3_72myu")]
+position = Vector2(63, 195)
+display_name = null
+initial_health = null
+run_speed = null
+wander_speed = null
+jump_speed = null
+should_wander = null
+should_notice = null
+
+[node name="FenceTiles" parent="." instance=ExtResource("5_ma4vh")]
+position = Vector2(206, 163)
+layer_0/tile_data = PackedInt32Array(-196611, 524289, 5, -262147, 262145, 3, -327683, 262145, 3, -393219, 262145, 3, -458755, 262145, 3, -524291, 262145, 3, -589827, 262145, 3, -655363, 262145, 3, -720899, 524289, 2, -196612, 131073, 5, -720900, 131073, 5, -196613, 131073, 5, -720901, 131073, 5, -196614, 65537, 5, -720902, 131073, 5, -720903, 131073, 5, -720904, 131073, 5, -720905, 131073, 5, -720906, 131073, 5, -196619, 196609, 5, -720907, 131073, 5, -196620, 131073, 5, -720908, 131073, 5, -196621, 131073, 5, -720909, 131073, 5, -196622, 327681, 5, -262158, 262145, 3, -327694, 262145, 3, -393230, 262145, 3, -458766, 262145, 3, -524302, 262145, 3, -589838, 262145, 3, -655374, 262145, 3, -720910, 327681, 2)
+
+[node name="TDPlayer" parent="." instance=ExtResource("4_8v4l2")]
+position = Vector2(159, 70)

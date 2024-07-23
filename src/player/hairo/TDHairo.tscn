@@ -310,7 +310,7 @@ metadata/_aseprite_wizard_config_ = {
 "o_name": "",
 "only_visible": false,
 "op_exp": false,
-"source": "res://src/dino/players/hairo/topdown_player_64.aseprite"
+"source": "res://src/players/hairo/topdown_player_64.aseprite"
 }
 
 [node name="StateLabel" type="RichTextLabel" parent="."]
