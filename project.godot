@@ -14,6 +14,17 @@ config/name="Overculted"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Debug="*res://addons/core/Debug.gd"
+Navi="*res://addons/core/navi/Navi.gd"
+DJ="*res://addons/core/dj/DJ.gd"
+InputHelper="*res://addons/input_helper/input_helper.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
+Juice="*res://addons/core/Juice.gd"
+Music="*res://src/Music.gd"
+Sounds="*res://src/Sounds.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -20,9 +20,9 @@ func _ready():
 
 ## input ###################################################################
 
-func _unhandled_input(event):
-	if not Engine.is_editor_hint() and Trolls.is_pause(event):
-		Navi.toggle_pause()
+# func _unhandled_input(event):
+# 	if not Engine.is_editor_hint() and Trolls.is_pause(event):
+# 		Navi.toggle_pause()
 
 ## process ###################################################################
 
