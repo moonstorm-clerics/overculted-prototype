@@ -1,0 +1,54 @@
+{:paths ["bb"]
+ :tasks
+ {:requires ([tasks :as tasks]
+             [logger :refer [log]]
+             [babashka.fs :as fs]
+             [clojure.string :as string])
+
+  :init
+  (do (log "bb.edn running task"))
+
+  watch tasks/watch
+
+  export       (tasks/export (some-> *command-line-args* first))
+  export-debug (tasks/export (some-> *command-line-args* first) {:debug? true})
+
+  build-web (tasks/build-web (some-> *command-line-args* first))
+
+  serve-built
+  {:extra-deps {org.babashka/http-server {:local/root "../../babashka/http-server"}}
+   :requires   ([babashka.http-server :as http-server])
+   :task       (let [arg (some-> *command-line-args* first)
+                     arg (or arg "overculted")]
+
+                 (http-server/exec {:port 3010 :dir (str  "dist/" arg)})
+                 ;; http-server installable via bbin
+                 #_(tasks/shell-and-log (str "http-server --port 3010 --dir dist/" arg)))}
+
+  butler-push (let [arg               (some-> *command-line-args* first)
+                    arg               (or arg "overculted")
+                    itch-project-name (or (some-> *command-line-args* second) arg)
+                    dir               (str "dist/" arg)
+                    [arg type]        (cond
+                                        (re-seq (re-pattern "-linux") arg)
+                                        [(-> arg (string/replace "-linux" "")) "linux-universal"]
+                                        (re-seq (re-pattern "-macos") arg)
+                                        (do
+                                          (println "DID YOU REMEMBER TO STAPLE IIIT???????")
+                                          [(-> arg (string/replace "-macos" "")) "osx-universal"])
+                                        (re-seq (re-pattern "-windows") arg)
+                                        [(-> arg (string/replace "-windows" "")) "windows"]
+                                        :else [arg "html5"])
+                    itch-project      (str "russmatney/" itch-project-name ":" type)
+                    command           (str "butler push --if-changed " dir " " itch-project)]
+
+                (log command)
+
+                ;; (println command)
+                ;; http-server installable via bbin
+                (tasks/shell-and-log command))
+
+  gd-plug
+  (tasks/shell-and-log
+    (str "godot --no-window -s plug.gd " (string/join " " *command-line-args*)))
+  }}
