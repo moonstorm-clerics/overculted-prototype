@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhxr5bwh2xafe"]
+[gd_scene load_steps=23 format=3 uid="uid://bhxr5bwh2xafe"]
 
 [ext_resource type="Script" path="res://src/npcs/TopDownNPC.gd" id="1_48ewx"]
 [ext_resource type="PackedScene" uid="uid://bu8b820xl050l" path="res://src/npcs/topdown_machine/TDNPCMachine.tscn" id="2_eycov"]
@@ -21,47 +21,66 @@ shader_parameter/replace_2 = Color(0.215742, 0.577089, 0.390113, 1)
 shader_parameter/replace_3 = Color(0.847579, 0.683259, 0.530813, 1)
 shader_parameter/replace_4 = Color(0.467414, 0.307482, 0.307482, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8u7x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlcnw"]
 atlas = ExtResource("4_mellb")
 region = Rect2(64, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vrah"]
-atlas = ExtResource("4_mellb")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mkb72"]
-atlas = ExtResource("4_mellb")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_52eiv"]
-atlas = ExtResource("4_mellb")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h00er"]
-atlas = ExtResource("4_mellb")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mooui"]
-atlas = ExtResource("4_mellb")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyfea"]
-atlas = ExtResource("4_mellb")
-region = Rect2(0, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vqly"]
-atlas = ExtResource("4_mellb")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jjlp6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ongx"]
 atlas = ExtResource("4_mellb")
 region = Rect2(128, 128, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4qy77"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iwrl"]
+atlas = ExtResource("4_mellb")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx36y"]
+atlas = ExtResource("4_mellb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ontuv"]
+atlas = ExtResource("4_mellb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_377i8"]
+atlas = ExtResource("4_mellb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xkob"]
+atlas = ExtResource("4_mellb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aukpb"]
+atlas = ExtResource("4_mellb")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv31d"]
+atlas = ExtResource("4_mellb")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_254r4"]
+atlas = ExtResource("4_mellb")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fwjv"]
+atlas = ExtResource("4_mellb")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01iwo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c8u7x")
+"texture": SubResource("AtlasTexture_nlcnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ongx")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iwrl")
 }],
 "loop": true,
 "name": &"grabbed",
@@ -69,7 +88,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3vrah")
+"texture": SubResource("AtlasTexture_cx36y")
 }],
 "loop": true,
 "name": &"idle",
@@ -77,7 +96,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mkb72")
+"texture": SubResource("AtlasTexture_ontuv")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -85,7 +104,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3vrah")
+"texture": SubResource("AtlasTexture_cx36y")
 }],
 "loop": true,
 "name": &"idle_right",
@@ -93,7 +112,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_52eiv")
+"texture": SubResource("AtlasTexture_377i8")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -101,10 +120,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h00er")
+"texture": SubResource("AtlasTexture_1xkob")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mooui")
+"texture": SubResource("AtlasTexture_aukpb")
 }],
 "loop": true,
 "name": &"run_down",
@@ -112,10 +131,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3vrah")
+"texture": SubResource("AtlasTexture_cx36y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qyfea")
+"texture": SubResource("AtlasTexture_cv31d")
 }],
 "loop": true,
 "name": &"run_right",
@@ -123,10 +142,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_52eiv")
+"texture": SubResource("AtlasTexture_377i8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8vqly")
+"texture": SubResource("AtlasTexture_254r4")
 }],
 "loop": true,
 "name": &"run_up",
@@ -134,7 +153,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jjlp6")
+"texture": SubResource("AtlasTexture_7fwjv")
 }],
 "loop": false,
 "name": &"thrown",
@@ -162,7 +181,7 @@ can_be_grabbed_thrown = true
 texture_filter = 1
 material = SubResource("ShaderMaterial_vdn42")
 position = Vector2(0, -7)
-sprite_frames = SubResource("SpriteFrames_4qy77")
+sprite_frames = SubResource("SpriteFrames_01iwo")
 animation = &"idle_down"
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
@@ -173,7 +192,7 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://src/npcs/villagers/grey.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "54e90657236658b0b6d9c46446672774"
+metadata/_aseprite_wizard_source_file_hash_ = "2064f49a604719631c21da13488beef4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

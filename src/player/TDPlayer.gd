@@ -321,6 +321,7 @@ func recover_health(h=null):
 func reset():
 	recover_health()
 	is_dead = false
+	grabbing = null
 	create_tween().tween_property(self, "modulate:a", 1.0, 0.4)
 
 

@@ -148,16 +148,16 @@ var actions = [
 		label="Grab",
 		fn=grabbed_by_player,
 		show_on_source=true, show_on_actor=false,
-		source_can_execute=func(): return not is_dead and can_be_grabbed_thrown and \
+		source_can_execute=func(): return can_be_grabbed_thrown and \
 			not machine.state.name in ["Thrown"],
-		actor_can_execute=func(player): return player.can_grab(),
+		actor_can_execute=func(player): return player.can_grab() and not is_dead,
 		}),
 	Action.mk({
 		label="Throw",
 		show_on_source=true, show_on_actor=false,
 		fn=thrown_by_player,
-		source_can_execute=func(): return can_be_grabbed_thrown and grabbed_by != null and not is_dead,
-		actor_can_execute=func(player): return player.grabbing == self,
+		source_can_execute=func(): return can_be_grabbed_thrown and grabbed_by != null,
+		actor_can_execute=func(player): return player.grabbing == self and not is_dead,
 		})
 	]
 
