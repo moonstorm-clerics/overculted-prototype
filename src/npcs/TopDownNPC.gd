@@ -63,6 +63,11 @@ var pit_detector
 var heart_particles
 var skull_particles
 
+## enter tree ###########################################################
+
+func _enter_tree():
+	add_to_group("npc", true)
+
 ## ready ###########################################################
 
 func _ready():

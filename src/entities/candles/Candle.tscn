@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://bid88q8ils016"]
+
+[ext_resource type="Script" path="res://src/entities/candles/Candle.gd" id="1_7eirx"]
+[ext_resource type="Texture2D" uid="uid://chrt8oe0rwud7" path="res://src/entities/candles/candle.png" id="3_k26g3"]
+[ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="4_asdr1"]
+[ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="6_jrqog"]
+[ext_resource type="Texture2D" uid="uid://b7k56d46x3akl" path="res://addons/core/assets/lights/light64px4.png" id="6_nahms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1lts"]
+size = Vector2(32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dfk1"]
+atlas = ExtResource("3_k26g3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2anqp"]
+atlas = ExtResource("3_k26g3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7cuy"]
+atlas = ExtResource("3_k26g3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n8ya"]
+atlas = ExtResource("3_k26g3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v1uyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dfk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2anqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7cuy")
+}],
+"loop": true,
+"name": &"flicker",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n8ya")
+}],
+"loop": true,
+"name": &"off",
+"speed": 10.0
+}]
+
+[node name="Candle" type="Node2D" groups=["candles"]]
+script = ExtResource("1_7eirx")
+
+[node name="ActionArea" parent="." instance=ExtResource("4_asdr1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_a1lts")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_v1uyx")
+animation = &"off"
+autoplay = "flicker"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://src/entities/candles/candle.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6df1799a6113bfa55f42a9284953f59"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+enabled = false
+energy = 0.800046
+shadow_enabled = true
+texture = ExtResource("6_nahms")
+texture_scale = 0.800037
+
+[node name="ActionHint" parent="." instance=ExtResource("6_jrqog")]
+visible = false
+position = Vector2(0, -26)
+label_text = "Rest"
+action_name = "action"
