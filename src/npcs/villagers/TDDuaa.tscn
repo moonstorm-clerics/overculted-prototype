@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://src/npcs/TopDownNPC.gd" id="1_t0hrs"]
 [ext_resource type="PackedScene" uid="uid://bu8b820xl050l" path="res://src/npcs/topdown_machine/TDNPCMachine.tscn" id="2_3xkbl"]
 [ext_resource type="Texture2D" uid="uid://dk16cdh5d354f" path="res://src/npcs/villagers/duaa.png" id="3_jg00b"]
-[ext_resource type="PackedScene" uid="uid://cadjlq5gl6srf" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_6da2o"]
 [ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="5_aybl5"]
 [ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="6_td85c"]
 [ext_resource type="PackedScene" uid="uid://3xncvrhaa7im" path="res://src/entities/pit/PitDetector.tscn" id="7_p8k4k"]
@@ -93,7 +92,6 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 scroll_active = false
 
-[node name="Item" parent="." instance=ExtResource("4_6da2o")]
 
 [node name="ActionArea" parent="." instance=ExtResource("5_aybl5")]
 
