@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6o14wyr3dlgf"]
+[gd_scene load_steps=7 format=3 uid="uid://b6o14wyr3dlgf"]
 
-[ext_resource type="Script" path="res://src/DinoGym.gd" id="1_d4h2b"]
 [ext_resource type="PackedScene" uid="uid://bhxr5bwh2xafe" path="res://src/npcs/villagers/TDVillager.tscn" id="5_63ifu"]
 [ext_resource type="PackedScene" uid="uid://dwtjckwhtmmht" path="res://src/npcs/villagers/TDDuaa.tscn" id="6_nq6w0"]
 [ext_resource type="PackedScene" uid="uid://d0nbgfv56fvm1" path="res://src/player/TDPlayer.tscn" id="7_4eijr"]
@@ -9,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://djioyv43e3v0v" path="res://src/npcs/villagers/TDCameron.tscn" id="9_cp31t"]
 
 [node name="VillagersGym" type="Node"]
-script = ExtResource("1_d4h2b")
 
 [node name="TDVillager" parent="." instance=ExtResource("5_63ifu")]
 position = Vector2(380, 216)

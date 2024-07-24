@@ -66,24 +66,12 @@ var skull_particles
 # var quick_select_scene = preload("res://src/components/quick_select/QuickSelect.tscn")
 # var quick_select_menu
 
-# var player_camera_scene = preload("res://src/players/PlayerCamera.tscn")
-# var pcam: PhantomCamera2D
-
 ## enter tree ###########################################################
 
 func _enter_tree():
 	add_to_group("player", true)
-	ensure_pcam()
 
 ## ready ###########################################################
-
-func ensure_pcam():
-	pass
-	# pcam = get_node_or_null("PlayerCamera")
-	# if pcam == null:
-	# 	pcam = player_camera_scene.instantiate()
-	# 	add_child(pcam)
-	# 	pcam.set_owner(self)
 
 func _ready():
 	U.set_optional_nodes(self, {

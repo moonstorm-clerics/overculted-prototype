@@ -25,6 +25,10 @@ Juice="*res://addons/core/Juice.gd"
 Music="*res://src/Music.gd"
 Sounds="*res://src/Sounds.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/core/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/log/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+
 [input]
 
 ui_left={

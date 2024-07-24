@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://klp1ph3xr7x1"]
+[gd_scene load_steps=4 format=3 uid="uid://klp1ph3xr7x1"]
 
-[ext_resource type="Script" path="res://src/DinoGym.gd" id="1_n5axb"]
 [ext_resource type="PackedScene" uid="uid://6sj01yybi4qt" path="res://src/npcs/sheep/Sheep.tscn" id="3_72myu"]
 [ext_resource type="PackedScene" uid="uid://d0nbgfv56fvm1" path="res://src/player/TDPlayer.tscn" id="4_8v4l2"]
 [ext_resource type="PackedScene" uid="uid://bnhchumgoi6s7" path="res://src/entities/fences/FenceTiles.tscn" id="5_ma4vh"]
 
 [node name="SheepGym" type="Node"]
-script = ExtResource("1_n5axb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 12.0

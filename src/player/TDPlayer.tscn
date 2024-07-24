@@ -263,3 +263,6 @@ texture_scale = 4.0
 [node name="SkullParticles" parent="." instance=ExtResource("9_qe2sw")]
 
 [node name="HeartParticles" parent="." instance=ExtResource("10_hjude")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
