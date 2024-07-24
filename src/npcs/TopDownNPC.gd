@@ -66,7 +66,7 @@ var skull_particles
 ## enter tree ###########################################################
 
 func _enter_tree():
-	add_to_group("npc", true)
+	add_to_group("npcs", true)
 
 ## ready ###########################################################
 
@@ -265,6 +265,12 @@ func recover_health(h=null):
 		health += h
 
 	health = clamp(health, 0, initial_health)
+
+# reset after death
+func reset():
+	recover_health()
+	is_dead = false
+	create_tween().tween_property(self, "modulate:a", 1.0, 0.4)
 
 ## notice_box ###########################################################
 
