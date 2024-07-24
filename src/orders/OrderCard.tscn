@@ -1,12 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://c58ysn2wap7"]
+[gd_scene load_steps=4 format=3 uid="uid://c58ysn2wap7"]
 
 [ext_resource type="Script" path="res://src/orders/OrderCard.gd" id="1_1o1ly"]
+[ext_resource type="Script" path="res://src/orders/OrderDef.gd" id="2_36wqm"]
 
-[node name="OrderCard" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[sub_resource type="Resource" id="Resource_uce34"]
+script = ExtResource("2_36wqm")
+demands = Array[int]([0, 0])
+demon_name = "Devil"
+
+[node name="OrderCard" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -25.5
+offset_right = 65.0
+offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1o1ly")
+order_def = SubResource("Resource_uce34")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DemonName" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Devil[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Demands" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

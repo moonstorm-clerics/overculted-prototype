@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://daghv7dskfn2q"]
+[gd_scene load_steps=15 format=3 uid="uid://daghv7dskfn2q"]
 
 [ext_resource type="PackedScene" uid="uid://hcgi0vnjas58" path="res://src/player/hairo/TDHairo.tscn" id="1_emn8c"]
 [ext_resource type="Script" path="res://src/levels/Level.gd" id="1_qkxx7"]
 [ext_resource type="PackedScene" uid="uid://drpxr83sltsot" path="res://addons/core/reptile/tilemaps/topdown/TDCaveWallTiles16.tscn" id="2_5vvr1"]
+[ext_resource type="PackedScene" uid="uid://c58ysn2wap7" path="res://src/orders/OrderCard.tscn" id="2_kbydu"]
 [ext_resource type="PackedScene" uid="uid://cosk30larse70" path="res://addons/core/reptile/tilemaps/topdown/TDCaveFloorTiles16.tscn" id="3_i1iw0"]
 [ext_resource type="PackedScene" uid="uid://g1xpunfo7e1u" path="res://addons/core/reptile/tilemaps/topdown/TDCavePitTiles16.tscn" id="4_gmiw8"]
 [ext_resource type="PackedScene" uid="uid://bnhchumgoi6s7" path="res://src/entities/fences/FenceTiles.tscn" id="5_e02en"]
@@ -13,8 +14,40 @@
 [ext_resource type="PackedScene" uid="uid://bid88q8ils016" path="res://src/entities/candles/Candle.tscn" id="10_fbum8"]
 [ext_resource type="PackedScene" uid="uid://bax62g5wrhfl7" path="res://src/entities/chant_station/ChantStation.tscn" id="11_75bwl"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h22dr"]
+
 [node name="LevelGym" type="Node2D"]
 script = ExtResource("1_qkxx7")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h22dr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+
+[node name="OrderList" type="HBoxContainer" parent="HUD/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="OrderCard" parent="HUD/PanelContainer/VBoxContainer/HBoxContainer/OrderList" instance=ExtResource("2_kbydu")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.67922, 0.399272, 0.399974, 1)

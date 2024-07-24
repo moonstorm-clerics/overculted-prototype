@@ -29,6 +29,11 @@ Sounds="*res://src/Sounds.gd"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/core/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/log/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
+[gui]
+
+theme/custom="res://src/DefaultTheme.tres"
+theme/custom_font="res://addons/core/assets/fonts/Born2bSportyV2.ttf"
+
 [input]
 
 ui_left={
@@ -89,11 +94,6 @@ pause={
 ]
 }
 
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-
 [layer_names]
 
 2d_physics/layer_1="walls, doors, env"
@@ -110,3 +110,8 @@ renderer/rendering_method.mobile="gl_compatibility"
 2d_physics/layer_12="spikes"
 2d_physics/layer_13="pits"
 2d_physics/layer_14="pit_fallers"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -3,11 +3,12 @@ class_name Level
 
 ## vars ###########################################################
 
+@onready var order_list = $%OrderList
+
 @onready var player = $TDHairo
 var player_start
 
 var npcs = []
-var orders = []
 
 signal action_taken(demand)
 
@@ -18,7 +19,9 @@ func _ready():
 
 	setup_player()
 	setup_npcs()
-	start_orders()
+
+	U.remove_children(order_list)
+	add_order()
 
 ## setup player/npcs ###########################################################
 
@@ -52,26 +55,31 @@ func setup_npcs():
 
 ## orders ###########################################################
 
-func start_orders():
+func add_order():
 	var new_order = OrderDef.gen_order()
-	orders.append(new_order)
-	Log.pr("order up!", orders)
-	# TODO create and add order card
+	var card = OrderCard.create(new_order)
+	order_list.add_child(card)
 
 ## action ###########################################################
 
 func on_action_taken(demand):
-	Log.info("Action taken", OrderDef.demand_label(demand))
-
-	# TODO check off/complete existing orders
-
 	match demand:
-		OrderDef.Demand.SacPlayer:
-			pass
-		OrderDef.Demand.SacNPC:
-			pass
-		OrderDef.Demand.Chant:
-			pass
-		OrderDef.Demand.Pray:
-			pass
-		_: Log.warn("Unhandled action taken", demand)
+		OrderDef.Demand.SacPlayer, OrderDef.Demand.SacNPC, OrderDef.Demand.Chant, OrderDef.Demand.Pray:
+			Log.info("Action taken", OrderDef.demand_label(demand))
+		_: Log.warn("Unhandled action", demand)
+
+	var to_remove
+	for order_card in order_list.get_children():
+		if order_card.has_demand(demand):
+			order_card.complete_demand(demand)
+
+			if order_card.is_complete():
+				to_remove = order_card
+			break
+
+	if to_remove:
+		to_remove.queue_free()
+
+		if len(order_list.get_children()) < 2:
+			add_order()
+			add_order()
