@@ -20,8 +20,7 @@ func enter(opts = {}):
 	var heal_t = create_tween()
 	heal_t.set_loops(3)
 	heal_t.tween_callback(func():
-		actor.recover_health(1)
-		# actor.emit_heart_particle()
+		actor.do_pray()
 		).set_delay(1)
 	heal_t.finished.connect(transit.bind("Idle"))
 

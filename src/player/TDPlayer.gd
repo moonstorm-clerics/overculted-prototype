@@ -319,6 +319,7 @@ func recover_health(h=null):
 
 # reset the player after death
 func reset():
+	Sounds.play(Sounds.S.respawn)
 	recover_health()
 	is_dead = false
 	grabbing = null
@@ -328,22 +329,14 @@ func reset():
 ## hurt_box ###########################################################
 
 var hurt_box_bodies = []
-# var is_invincible = false
 
 func on_hurt_box_entered(body):
-	# if is_invincible:
-	# 	return
 	if not "is_td_body" in body:
 		return
 	if not body.is_dead and not body.machine.state.name in ["KnockedBack", "Dying", "Dead"]:
 		if not body in hurt_box_bodies:
 			hurt_box_bodies.append(body)
 			self.take_hit({type="bump", body=body})
-
-			# is_invincible = true
-			# await get_tree().create_timer(1.0).timeout
-			# is_invincible = false
-			# hurt_box_bodies = []
 
 func on_hurt_box_exited(body):
 	hurt_box_bodies.erase(body)
@@ -358,12 +351,12 @@ func is_holding():
 	return not grabbing == null
 
 func grab(node):
-	# Sounds.play(Sounds.S.candleout)
+	Sounds.play(Sounds.S.grab)
 	grabbing = node
 	U._connect(node.died, on_grabbing_died)
 
 func throw(_node):
-	# Sounds.play(Sounds.S.laser)
+	Sounds.play(Sounds.S.throw)
 	grabbing.died.disconnect(on_grabbing_died)
 	grabbing = null
 	# could pass throw_speed/weight
@@ -372,6 +365,12 @@ func throw(_node):
 func on_grabbing_died(_node):
 	grabbing = null
 
+
+func do_chant():
+	Sounds.play(Sounds.S.chant)
+
+func do_pray():
+	Sounds.play(Sounds.S.pray)
 
 #################################################################################
 ## Effects #####################################################################

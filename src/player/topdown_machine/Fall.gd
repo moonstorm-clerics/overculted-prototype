@@ -11,7 +11,7 @@ var tween
 
 func enter(opts = {}):
 	actor.anim.play("fall")
-	# Sounds.play(Sounds.S.fall)
+	Sounds.play(Sounds.S.willem_scream)
 	fall_ttl = U.get_(opts, "fall_time", fall_time)
 	actor.velocity = Vector2.ZERO
 

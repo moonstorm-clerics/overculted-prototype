@@ -45,7 +45,7 @@ func is_lit():
 func light_up(_actor=null):
 	lit = true
 	anim.play("flicker")
-	# Sounds.play(Sounds.S.candlelit)
+	Sounds.play(Sounds.S.light_candle)
 	light.set_enabled(true)
 	light_tween()
 

@@ -137,13 +137,6 @@ func _on_transit(label):
 ## actions #########################################################
 
 var actions = [
-	# Action.mk({
-	# 	label="Call",
-	# 	fn=follow_player,
-	# 	show_on_source=true, show_on_actor=false,
-	# 	source_can_execute=func():
-	# 	return can_be_called and following == null and grabbed_by == null and not machine.state.name in ["Thrown"] and not is_dead,
-	# 	}),
 	Action.mk({
 		label="Grab",
 		fn=grabbed_by_player,

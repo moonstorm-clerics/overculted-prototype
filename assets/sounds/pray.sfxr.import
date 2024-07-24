@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://coobs6mexon1f"
+path="res://.godot/imported/pray.sfxr-7eafbd677a85b74a68461976f4364c61.sample"
+
+[deps]
+
+source_file="res://assets/sounds/pray.sfxr"
+dest_files=["res://.godot/imported/pray.sfxr-7eafbd677a85b74a68461976f4364c61.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

@@ -59,6 +59,7 @@ func add_order():
 	var new_order = OrderDef.gen_order()
 	var card = OrderCard.create(new_order)
 	order_list.add_child(card)
+	Sounds.play(Sounds.S.new_order)
 
 ## action ###########################################################
 
@@ -72,6 +73,7 @@ func on_action_taken(demand):
 	for order_card in order_list.get_children():
 		if order_card.has_demand(demand):
 			order_card.complete_demand(demand)
+			Sounds.play(Sounds.S.demand_complete)
 
 			if order_card.is_complete():
 				to_remove = order_card
@@ -79,6 +81,7 @@ func on_action_taken(demand):
 
 	if to_remove:
 		await get_tree().create_timer(2.0).timeout
+		Sounds.play(Sounds.S.order_complete)
 		to_remove.queue_free()
 
 		if len(order_list.get_children()) < 2:

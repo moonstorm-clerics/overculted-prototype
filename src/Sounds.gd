@@ -1,12 +1,32 @@
 extends DJSoundMap
 
 enum S {
+	chant,
+	demand_complete,
+	grab,
+	new_order,
+	order_complete,
+	pray,
+	respawn,
+	throw,
+	light_candle,
+	willem_scream,
 	}
 
 ###########################################################################
 # sounds
 
 @onready var sounds = {
+	S.chant: [preload("res://assets/sounds/chant.sfxr")],
+	S.demand_complete: [preload("res://assets/sounds/demand_complete.sfxr")],
+	S.grab: [preload("res://assets/sounds/grab.sfxr")],
+	S.new_order: [preload("res://assets/sounds/new_order.sfxr")],
+	S.order_complete: [preload("res://assets/sounds/order_complete.sfxr")],
+	S.pray: [preload("res://assets/sounds/pray.sfxr")],
+	S.respawn: [preload("res://assets/sounds/respawn.sfxr")],
+	S.throw: [preload("res://assets/sounds/throw.sfxr")],
+	S.light_candle: [preload("res://assets/sounds/light_candle.sfxr")],
+	S.willem_scream: [preload("res://assets/sounds/WillemScream.wav")],
 }
 
 ## enter tree ##################################################################

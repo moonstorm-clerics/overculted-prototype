@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bfnwmifgykjlf"
+path="res://.godot/imported/light_candle.sfxr-93e6616fa199b8abee0b30c90fc91259.sample"
+
+[deps]
+
+source_file="res://assets/sounds/light_candle.sfxr"
+dest_files=["res://.godot/imported/light_candle.sfxr-93e6616fa199b8abee0b30c90fc91259.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

@@ -20,7 +20,7 @@ func enter(opts = {}):
 	var chant_t = create_tween()
 	chant_t.set_loops(3)
 	chant_t.tween_callback(func():
-		# actor.do_chant()
+		actor.do_chant()
 		).set_delay(1)
 	chant_t.finished.connect(transit.bind("Idle"))
 

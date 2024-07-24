@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://cb876xyfpjgmn"
+path="res://.godot/imported/chant.sfxr-332d3a113b0d8e60350a053a72eb68de.sample"
+
+[deps]
+
+source_file="res://assets/sounds/chant.sfxr"
+dest_files=["res://.godot/imported/chant.sfxr-332d3a113b0d8e60350a053a72eb68de.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

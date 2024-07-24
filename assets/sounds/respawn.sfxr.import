@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://cdt73ebnxm15"
+path="res://.godot/imported/respawn.sfxr-d92559689bcf1006715cc3fb5657680b.sample"
+
+[deps]
+
+source_file="res://assets/sounds/respawn.sfxr"
+dest_files=["res://.godot/imported/respawn.sfxr-d92559689bcf1006715cc3fb5657680b.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0
