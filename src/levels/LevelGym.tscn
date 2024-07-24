@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://daghv7dskfn2q"]
+[gd_scene load_steps=13 format=3 uid="uid://daghv7dskfn2q"]
 
 [ext_resource type="PackedScene" uid="uid://hcgi0vnjas58" path="res://src/player/hairo/TDHairo.tscn" id="1_emn8c"]
 [ext_resource type="Script" path="res://src/levels/Level.gd" id="1_qkxx7"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cosk30larse70" path="res://addons/core/reptile/tilemaps/topdown/TDCaveFloorTiles16.tscn" id="3_i1iw0"]
 [ext_resource type="PackedScene" uid="uid://g1xpunfo7e1u" path="res://addons/core/reptile/tilemaps/topdown/TDCavePitTiles16.tscn" id="4_gmiw8"]
 [ext_resource type="PackedScene" uid="uid://bnhchumgoi6s7" path="res://src/entities/fences/FenceTiles.tscn" id="5_e02en"]
-[ext_resource type="PackedScene" uid="uid://c805020xvs8jg" path="res://src/npcs/villagers/TDRuss.tscn" id="6_t6vc1"]
 [ext_resource type="PackedScene" uid="uid://bhxr5bwh2xafe" path="res://src/npcs/villagers/TDVillager.tscn" id="7_uiwid"]
-[ext_resource type="PackedScene" uid="uid://dwtjckwhtmmht" path="res://src/npcs/villagers/TDDuaa.tscn" id="8_kmbhg"]
 [ext_resource type="PackedScene" uid="uid://6sj01yybi4qt" path="res://src/npcs/sheep/Sheep.tscn" id="9_3d4jx"]
 [ext_resource type="PackedScene" uid="uid://bid88q8ils016" path="res://src/entities/candles/Candle.tscn" id="10_fbum8"]
 [ext_resource type="PackedScene" uid="uid://bax62g5wrhfl7" path="res://src/entities/chant_station/ChantStation.tscn" id="11_75bwl"]
@@ -73,14 +71,8 @@ layer_0/tile_data = PackedInt32Array(1572879, 131072, 5, 1572878, 131072, 5, 157
 [node name="TDHairo" parent="." instance=ExtResource("1_emn8c")]
 position = Vector2(243, 147)
 
-[node name="TDRuss" parent="." instance=ExtResource("6_t6vc1")]
-position = Vector2(104, 235)
-
 [node name="TDVillager" parent="." instance=ExtResource("7_uiwid")]
 position = Vector2(380, 257)
-
-[node name="TDDuaa" parent="." instance=ExtResource("8_kmbhg")]
-position = Vector2(139, 78)
 
 [node name="Sheep" parent="." instance=ExtResource("9_3d4jx")]
 position = Vector2(345, 93)

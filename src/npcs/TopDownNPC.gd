@@ -8,7 +8,9 @@ func _get_configuration_warnings():
 		"TDNPCMachine", "StateLabel", "AnimatedSprite2D",
 		], expected_animations={"AnimatedSprite2D": [
 			"idle_down", "idle_up", "idle_right",
-			"run_down", "run_up", "run_right",]}})
+			"run_down", "run_up", "run_right",
+			"idle", "grabbed", "thrown",
+			]}})
 
 ## vars ###########################################################
 

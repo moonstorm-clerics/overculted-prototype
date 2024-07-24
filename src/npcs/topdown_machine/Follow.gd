@@ -5,7 +5,8 @@ extends State
 
 
 func enter(_opts = {}):
-	actor.anim.play("follow")
+	pass
+	# actor.anim.play("follow")
 
 func exit(_opts = {}):
 	actor.following = null
