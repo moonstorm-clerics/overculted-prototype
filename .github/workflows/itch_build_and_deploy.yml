@@ -1,14 +1,10 @@
 name: Itch.io Deploy
 
 on:
-  workflow_run:
-    workflows: ["Unit Tests"]
-    types: [completed]
-    branches: [edge, prod]
+  push:
 
 jobs:
   export-windows:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Windows Export
     runs-on: ubuntu-20.04
     container:
@@ -36,19 +32,18 @@ jobs:
           godot --editor --headless --quit || exit 0
       - name: Windows Build
         run: |
-          mkdir -v -p dist/overculted-windows
-          godot --headless -v --export-debug overculted-windows dist/overculted-windows/overculted.exe || exit 0
+          mkdir -v -p dist/windows
+          godot --headless -v --export-debug Windows dist/windows/overculted.exe || exit 0
       - name: Sanity check
         run: |
           ls -alh dist/
-          ls -alh dist/overculted-windows
-          stat dist/overculted-windows/overculted.exe
+          ls -alh dist/windows
+          stat dist/windows/overculted.exe
       - name: Deploy windows to itch.io
-        run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/overculted-windows russmatney/overculted:windows
+        run: BUTLER_API_KEY=${{ secrets.BUTLER_API_KEY }} butler push dist/windows moonstorm-clerics/overculted-prototype:windows
 
 
   export-linux:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Linux Export
     runs-on: ubuntu-20.04
     container:
@@ -76,18 +71,17 @@ jobs:
           godot --editor --headless --quit || exit 0
       - name: Linux Build
         run: |
-          mkdir -v -p dist/overculted-linux
-          godot --headless -v --export-debug overculted-linux dist/overculted-linux/overculted.x86_64 || exit 0
+          mkdir -v -p dist/linux
+          godot --headless -v --export-debug Linux dist/linux/overculted.x86_64 || exit 0
       - name: Sanity check
         run: |
           ls -alh dist/
-          ls -alh dist/overculted-linux
-          stat dist/overculted-linux/overculted.x86_64
+          ls -alh dist/linux
+          stat dist/linux/overculted.x86_64
       - name: Deploy linux to itch.io
-        run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/overculted-linux russmatney/overculted:linux
+        run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/linux moonstorm-clerics/overculted-prototype:linux
 
   export-web:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Web Export
     runs-on: ubuntu-20.04
     container:
@@ -115,18 +109,17 @@ jobs:
           godot --editor --headless --quit || exit 0
       - name: Web Build
         run: |
-          mkdir -v -p dist/overculted-web
-          godot --headless -v --export-debug overculted-web dist/overculted-web/index.html || exit 0
+          mkdir -v -p dist/web
+          godot --headless -v --export-debug Web dist/web/index.html || exit 0
       - name: Sanity check
         run: |
           ls -alh dist/
-          ls -alh dist/overculted-web
-          stat dist/overculted-web/index.html
+          ls -alh dist/web
+          stat dist/web/index.html
       - name: Deploy web build to itch.io (overculted)
-        run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/overculted-web russmatney/overculted:html5
+        run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/web moonstorm-clerics/overculted-prototype:html5
 
   # export-mac:
-  #   if: ${{ github.event.workflow_run.conclusion == 'success' }}
   #   name: Mac Export
   #   runs-on: ubuntu-20.04
   #   container:
@@ -154,12 +147,12 @@ jobs:
   #         godot --editor --headless --quit || exit 0
   #     - name: Mac Build
   #       run: |
-  #         mkdir -v -p dist/overculted-macos
-  #         godot --headless -v --export-debug overculted-macos dist/overculted-macos/overculted.dmg || exit 0
+  #         mkdir -v -p dist/macos
+  #         godot --headless -v --export-debug macos dist/macos/overculted.dmg || exit 0
   #     - name: Sanity check
   #       run: |
   #         ls -alh dist/
-  #         ls -alh dist/overculted-macos
-  #         stat dist/overculted-macos/overculted.dmg
+  #         ls -alh dist/macos
+  #         stat dist/macos/overculted.dmg
   #     - name: Deploy mac build to itch.io
-  #       run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/overculted-macos russmatney/overculted:macos
+  #       run: BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push dist/macos moonstorm-clerics/overculted-prototype:macos

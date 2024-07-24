@@ -6,7 +6,9 @@
              [clojure.string :as string])
 
   :init
-  (do (log "bb.edn running task"))
+  (do
+    (def game-name "overculted")
+    (log "bb.edn running task"))
 
   watch tasks/watch
 
@@ -19,14 +21,14 @@
   {:extra-deps {org.babashka/http-server {:local/root "../../babashka/http-server"}}
    :requires   ([babashka.http-server :as http-server])
    :task       (let [arg (some-> *command-line-args* first)
-                     arg (or arg "overculted")]
+                     arg (or arg game-name)]
 
-                 (http-server/exec {:port 3010 :dir (str  "dist/" arg)})
+                 (http-server/exec {:port 3010 :dir "dist/web"})
                  ;; http-server installable via bbin
                  #_(tasks/shell-and-log (str "http-server --port 3010 --dir dist/" arg)))}
 
   butler-push (let [arg               (some-> *command-line-args* first)
-                    arg               (or arg "overculted")
+                    arg               (or arg game-name)
                     itch-project-name (or (some-> *command-line-args* second) arg)
                     dir               (str "dist/" arg)
                     [arg type]        (cond
