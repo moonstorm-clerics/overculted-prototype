@@ -98,6 +98,14 @@ func _ready():
 
 	machine.transitioned.connect(_on_transit)
 
+	set_collision_layer_value(1, false) # walls,doors,env
+	set_collision_layer_value(10, true) # npc
+	set_collision_mask_value(1, true) # walls/env
+	set_collision_mask_value(3, true) # player projectiles
+	set_collision_mask_value(5, true) # enemy projectiles
+	set_collision_mask_value(10, true) # npcs
+	set_collision_mask_value(11, true) # fences, low-walls
+
 ## physics_process ###########################################################
 
 func _physics_process(_delta):

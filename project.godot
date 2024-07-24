@@ -93,3 +93,20 @@ pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[layer_names]
+
+2d_physics/layer_1="walls, doors, env"
+2d_physics/layer_2="player"
+2d_physics/layer_3="player projectiles"
+2d_physics/layer_4="enemies"
+2d_physics/layer_5="enemy projectiles"
+2d_physics/layer_6="items"
+2d_physics/layer_7="aoe tiles"
+2d_physics/layer_8="destructibles"
+2d_physics/layer_9="actionAreas"
+2d_physics/layer_10="npcs"
+2d_physics/layer_11="fences, low-walls"
+2d_physics/layer_12="spikes"
+2d_physics/layer_13="pits"
+2d_physics/layer_14="pit_fallers"
