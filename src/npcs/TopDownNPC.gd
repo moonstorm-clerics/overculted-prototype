@@ -245,6 +245,11 @@ func take_damage(opts):
 	health -= damage
 	health = clamp(health, 0, initial_health)
 
+## pits ###################################################################
+
+func on_pit_entered():
+	machine.transit("Fall")
+
 ## recover health ###########################################################
 
 # if no arg passed, recovers _all_ health

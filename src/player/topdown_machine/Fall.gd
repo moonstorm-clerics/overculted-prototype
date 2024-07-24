@@ -15,6 +15,8 @@ func enter(opts = {}):
 	fall_ttl = U.get_(opts, "fall_time", fall_time)
 	actor.velocity = Vector2.ZERO
 
+	if tween:
+		tween.kill()
 	tween = create_tween()
 	tween.tween_property(actor, "scale", Vector2.ONE*fall_scale_factor, fall_ttl)
 	tween.tween_property(actor, "modulate:a", 0.0, fall_ttl)

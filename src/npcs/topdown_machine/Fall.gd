@@ -5,6 +5,8 @@ var fall_time = 0.6
 var fall_ttl
 var fall_scale_factor = 0.2
 
+var tween
+
 ## enter ###########################################################
 
 func enter(opts = {}):
@@ -13,7 +15,9 @@ func enter(opts = {}):
 	fall_ttl = U.get_(opts, "fall_time", fall_time)
 	actor.velocity = Vector2.ZERO
 
-	var tween = create_tween()
+	if tween:
+		tween.kill()
+	tween = create_tween()
 	tween.tween_property(actor, "scale", Vector2.ONE*fall_scale_factor, fall_ttl)
 	tween.tween_property(actor, "modulate:a", 0.0, fall_ttl)
 
@@ -29,8 +33,10 @@ func enter(opts = {}):
 ## exit ###########################################################
 
 func exit():
-	pass
-
+	tween.kill()
+	tween = create_tween()
+	tween.tween_property(actor, "scale", Vector2.ONE, 0.3)
+	tween.tween_property(actor, "modulate:a", 1.0, 0.3)
 
 ## input ###########################################################
 
@@ -44,7 +50,7 @@ func physics_process(delta):
 	fall_ttl -= delta
 
 	if fall_ttl <= 0:
-		# reset handler? move back to safe position? die? fire signal?
+		machine.transit("Dead")
 		return
 
 	actor.move_and_slide()

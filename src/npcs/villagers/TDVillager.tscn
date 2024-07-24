@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhxr5bwh2xafe"]
+[gd_scene load_steps=14 format=3 uid="uid://bhxr5bwh2xafe"]
 
 [ext_resource type="Script" path="res://src/npcs/TopDownNPC.gd" id="1_48ewx"]
 [ext_resource type="PackedScene" uid="uid://bu8b820xl050l" path="res://src/npcs/topdown_machine/TDNPCMachine.tscn" id="2_eycov"]
 [ext_resource type="Shader" path="res://src/effects/ColorSwapShader.gdshader" id="3_j1plc"]
-[ext_resource type="PackedScene" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_5e1lk"]
+[ext_resource type="PackedScene" uid="uid://cadjlq5gl6srf" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_5e1lk"]
 [ext_resource type="Texture2D" uid="uid://43a5h625x7wd" path="res://src/npcs/villagers/grey.png" id="4_mellb"]
 [ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="6_bd1r8"]
 [ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="7_603fe"]
+[ext_resource type="PackedScene" uid="uid://3xncvrhaa7im" path="res://src/entities/pit/PitDetector.tscn" id="8_plpxs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vdn42"]
 shader = ExtResource("3_j1plc")
@@ -114,3 +115,7 @@ shape = SubResource("CircleShape2D_mv0ol")
 
 [node name="ActionHint" parent="." instance=ExtResource("7_603fe")]
 position = Vector2(0, -21)
+action_name = ""
+
+[node name="PitDetector" parent="." instance=ExtResource("8_plpxs")]
+position = Vector2(0, 8)

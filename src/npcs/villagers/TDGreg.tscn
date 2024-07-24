@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://di8fxhhf04mpu"]
+[gd_scene load_steps=12 format=3 uid="uid://di8fxhhf04mpu"]
 
 [ext_resource type="Script" path="res://src/npcs/TopDownNPC.gd" id="1_g8gde"]
 [ext_resource type="PackedScene" uid="uid://bu8b820xl050l" path="res://src/npcs/topdown_machine/TDNPCMachine.tscn" id="2_id1ib"]
 [ext_resource type="Texture2D" uid="uid://dginped3qtil7" path="res://src/npcs/villagers/greg.png" id="3_mmt0a"]
-[ext_resource type="PackedScene" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_dw06f"]
+[ext_resource type="PackedScene" uid="uid://cadjlq5gl6srf" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_dw06f"]
 [ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="5_r0i2n"]
 [ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="6_1i1v5"]
+[ext_resource type="PackedScene" uid="uid://3xncvrhaa7im" path="res://src/entities/pit/PitDetector.tscn" id="7_mkhxn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w5tn0"]
 atlas = ExtResource("3_mmt0a")
@@ -99,3 +100,7 @@ shape = SubResource("CircleShape2D_rh5ny")
 
 [node name="ActionHint" parent="." instance=ExtResource("6_1i1v5")]
 position = Vector2(0, -21)
+action_name = ""
+
+[node name="PitDetector" parent="." instance=ExtResource("7_mkhxn")]
+position = Vector2(0, 8)

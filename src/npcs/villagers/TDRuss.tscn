@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c805020xvs8jg"]
+[gd_scene load_steps=12 format=3 uid="uid://c805020xvs8jg"]
 
 [ext_resource type="Script" path="res://src/npcs/TopDownNPC.gd" id="1_j88fm"]
 [ext_resource type="PackedScene" uid="uid://bu8b820xl050l" path="res://src/npcs/topdown_machine/TDNPCMachine.tscn" id="2_sr181"]
 [ext_resource type="Texture2D" uid="uid://de35kump8lsqn" path="res://src/npcs/villagers/russ.png" id="3_m560k"]
-[ext_resource type="PackedScene" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_yed3w"]
+[ext_resource type="PackedScene" uid="uid://cadjlq5gl6srf" path="res://src/npcs/HarveyPlayerItem.tscn" id="4_yed3w"]
 [ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="5_2srkc"]
 [ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="6_lmnia"]
+[ext_resource type="PackedScene" uid="uid://3xncvrhaa7im" path="res://src/entities/pit/PitDetector.tscn" id="7_dbd2f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbvvy"]
 atlas = ExtResource("3_m560k")
@@ -99,3 +100,7 @@ shape = SubResource("CircleShape2D_8rct6")
 
 [node name="ActionHint" parent="." instance=ExtResource("6_lmnia")]
 position = Vector2(0, -21)
+action_name = ""
+
+[node name="PitDetector" parent="." instance=ExtResource("7_dbd2f")]
+position = Vector2(0, 8)

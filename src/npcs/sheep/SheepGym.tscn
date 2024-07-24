@@ -15,43 +15,15 @@ color = Color(0.174225, 0.420002, 0.570602, 1)
 
 [node name="Sheep" parent="." instance=ExtResource("3_72myu")]
 position = Vector2(269, 108)
-display_name = null
-initial_health = null
-run_speed = null
-wander_speed = null
-jump_speed = null
-should_wander = null
-should_notice = null
 
 [node name="Sheep2" parent="." instance=ExtResource("3_72myu")]
 position = Vector2(283, 121)
-display_name = null
-initial_health = null
-run_speed = null
-wander_speed = null
-jump_speed = null
-should_wander = null
-should_notice = null
 
 [node name="Sheep3" parent="." instance=ExtResource("3_72myu")]
 position = Vector2(306, 158)
-display_name = null
-initial_health = null
-run_speed = null
-wander_speed = null
-jump_speed = null
-should_wander = null
-should_notice = null
 
 [node name="Sheep4" parent="." instance=ExtResource("3_72myu")]
 position = Vector2(63, 195)
-display_name = null
-initial_health = null
-run_speed = null
-wander_speed = null
-jump_speed = null
-should_wander = null
-should_notice = null
 
 [node name="FenceTiles" parent="." instance=ExtResource("5_ma4vh")]
 position = Vector2(206, 163)
