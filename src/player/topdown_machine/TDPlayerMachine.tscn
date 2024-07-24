@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch8rasfmsvl5s"]
+[gd_scene load_steps=12 format=3 uid="uid://ch8rasfmsvl5s"]
 
 [ext_resource type="Script" path="res://addons/core/machine/Machine.gd" id="1_2hs06"]
 [ext_resource type="Script" path="res://src/player/topdown_machine/Idle.gd" id="2_whcxl"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://src/player/topdown_machine/Fall.gd" id="5_jrhe7"]
 [ext_resource type="Script" path="res://src/player/topdown_machine/Notice.gd" id="7_ocgg4"]
 [ext_resource type="Script" path="res://src/player/topdown_machine/KnockedBack.gd" id="9_2rpqg"]
+[ext_resource type="Script" path="res://src/player/topdown_machine/Pray.gd" id="10_hyxq3"]
 [ext_resource type="Script" path="res://src/player/topdown_machine/Dying.gd" id="10_ki01m"]
+[ext_resource type="Script" path="res://src/player/topdown_machine/Chant.gd" id="11_6iipw"]
 [ext_resource type="Script" path="res://src/player/topdown_machine/Dead.gd" id="11_27vl2"]
 
 [node name="TDPlayerMachine" type="Node"]
@@ -36,3 +38,9 @@ script = ExtResource("10_ki01m")
 
 [node name="Dead" type="Node" parent="."]
 script = ExtResource("11_27vl2")
+
+[node name="Pray" type="Node" parent="."]
+script = ExtResource("10_hyxq3")
+
+[node name="Chant" type="Node" parent="."]
+script = ExtResource("11_6iipw")

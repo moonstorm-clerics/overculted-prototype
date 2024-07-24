@@ -10,8 +10,8 @@ var actions = [
 		source_can_execute=func(): return not is_lit(),
 		show_on_source=true, show_on_actor=false,}),
 	Action.mk({
-		label="Sit", fn=sit,
-		source_can_execute=func(): return is_lit() and not sitting,
+		label="Pray", fn=pray,
+		source_can_execute=func(): return is_lit() and not praying,
 		show_on_source=true, show_on_actor=false,}),
 	]
 
@@ -51,15 +51,15 @@ func put_out(_actor=null):
 	# Sounds.play(Sounds.S.candleout)
 	light.set_enabled(false)
 
-var sitting
-func sit(player):
-	sitting = true
+var praying
+func pray(player):
+	praying = true
 
 	var exit_cb = func():
 		put_out()
-		sitting = false
+		praying = false
 
-	player.machine.transit("Rest", {exit_cb=exit_cb})
+	player.machine.transit("Pray", {exit_cb=exit_cb})
 
 
 ## light tween ################################################################

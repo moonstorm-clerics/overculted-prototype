@@ -64,7 +64,7 @@ texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_v1uyx")
 animation = &"off"
-autoplay = "flicker"
+autoplay = "off"
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",

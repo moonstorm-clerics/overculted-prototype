@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bax62g5wrhfl7"]
+
+[ext_resource type="Script" path="res://src/entities/chant_station/ChantStation.gd" id="1_45wdo"]
+[ext_resource type="PackedScene" path="res://addons/core/actions/ActionArea.tscn" id="2_y8m8f"]
+[ext_resource type="PackedScene" uid="uid://bfatjgmhlkjne" path="res://addons/core/actions/ActionHint.tscn" id="3_v8it2"]
+[ext_resource type="Texture2D" uid="uid://dibuwc75mmelp" path="res://src/entities/chant_station/log_checkpoint_sheet.png" id="4_byepo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtt71"]
+size = Vector2(30, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awv3i"]
+atlas = ExtResource("4_byepo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_temda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awv3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="ChantStation" type="Node2D" groups=["metro_checkpoints"]]
+script = ExtResource("1_45wdo")
+
+[node name="ActionArea" parent="." instance=ExtResource("2_y8m8f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_dtt71")
+
+[node name="ActionHint" parent="." instance=ExtResource("3_v8it2")]
+visible = false
+position = Vector2(0, -56)
+label_text = "Rest"
+action_name = ""
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_temda")
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"source": "res://src/dino/entities/checkpoints/MNT_log_bench_checkpoint.aseprite"
+}

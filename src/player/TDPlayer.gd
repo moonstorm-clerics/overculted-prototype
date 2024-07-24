@@ -26,7 +26,7 @@ func _get_configuration_warnings():
 
 var move_vector: Vector2
 var facing_vector: Vector2
-var health
+var health = 1
 var aim_vector = Vector2.ZERO
 var is_dead
 var grabbing
@@ -308,6 +308,8 @@ func take_damage(opts):
 
 # if no arg passed, recovers _all_ health
 func recover_health(h=null):
+	if health == null:
+		health = 0
 	if h == null:
 		health = initial_health
 	else:
