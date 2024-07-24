@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://c5e4katctcdcn"
-path="res://.godot/imported/shovel.aseprite-ca0be59342de71dfa10848fa1c7c3a5c.res"
+path="res://.godot/imported/shovel.aseprite-67a4865f29fe1420bce7b4684efa56a3.res"
 
 [deps]
 
 source_file="res://src/entities/harvey_entities/assets/shovel.aseprite"
-dest_files=["res://.godot/imported/shovel.aseprite-ca0be59342de71dfa10848fa1c7c3a5c.res"]
+dest_files=["res://.godot/imported/shovel.aseprite-67a4865f29fe1420bce7b4684efa56a3.res"]
 
 [params]
 

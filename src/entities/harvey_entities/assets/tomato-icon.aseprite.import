@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://dgt71x4jj5012"
-path="res://.godot/imported/tomato-icon.aseprite-416c65e9d3ef1e2372b3c7f9d86f7ef1.res"
+path="res://.godot/imported/tomato-icon.aseprite-0f50e8a95c81ed3138a269c5bf491e77.res"
 
 [deps]
 
 source_file="res://src/entities/harvey_entities/assets/tomato-icon.aseprite"
-dest_files=["res://.godot/imported/tomato-icon.aseprite-416c65e9d3ef1e2372b3c7f9d86f7ef1.res"]
+dest_files=["res://.godot/imported/tomato-icon.aseprite-0f50e8a95c81ed3138a269c5bf491e77.res"]
 
 [params]
 

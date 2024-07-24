@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://bg2644iqp5wq"
-path="res://.godot/imported/seed-box.aseprite-34cd39cffdf0980cbf4bb6548f3427e2.res"
+path="res://.godot/imported/seed-box.aseprite-07771413e9d49f30f39fd6691402514c.res"
 
 [deps]
 
 source_file="res://src/entities/harvey_entities/assets/seed-box.aseprite"
-dest_files=["res://.godot/imported/seed-box.aseprite-34cd39cffdf0980cbf4bb6548f3427e2.res"]
+dest_files=["res://.godot/imported/seed-box.aseprite-07771413e9d49f30f39fd6691402514c.res"]
 
 [params]
 
