@@ -21,6 +21,7 @@ offset_right = 65.0
 offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"OrderCardPanel"
 script = ExtResource("1_1o1ly")
 order_def = SubResource("Resource_uce34")
 

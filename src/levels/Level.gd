@@ -78,6 +78,7 @@ func on_action_taken(demand):
 			break
 
 	if to_remove:
+		await get_tree().create_timer(2.0).timeout
 		to_remove.queue_free()
 
 		if len(order_list.get_children()) < 2:
