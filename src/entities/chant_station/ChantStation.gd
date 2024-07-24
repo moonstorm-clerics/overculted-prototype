@@ -14,7 +14,10 @@ func _get_configuration_warnings():
 
 var actions = [
 	Action.mk({label="Chant", fn=start_chant, show_on_actor=false,
-		source_can_execute=func(): return not chanting}),
+		source_can_execute=func(): return not chanting,
+		# kind of a gross leak of grab/throw into other actions!!
+		actor_can_execute=func(player): return not player.is_holding(),
+		})
 	]
 
 ## start_chant ###########################################################

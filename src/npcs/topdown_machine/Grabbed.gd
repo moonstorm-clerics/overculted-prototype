@@ -18,7 +18,7 @@ func exit(_opts = {}):
 
 ## physics ###########################################################
 
-var grab_offset = Vector2(0, -20)
+var grab_offset = Vector2(0, -10)
 var lerp_amount = 0.8
 
 func physics_process(_delta):

@@ -8,9 +8,13 @@ var actions = [
 	Action.mk({
 		label="Light", fn=light_up,
 		source_can_execute=func(): return not is_lit(),
+		# kind of a gross leak of grab/throw into other actions!!
+		actor_can_execute=func(player): return not player.is_holding(),
 		show_on_source=true, show_on_actor=false,}),
 	Action.mk({
 		label="Pray", fn=pray,
+		# kind of a gross leak of grab/throw into other actions!!
+		actor_can_execute=func(player): return not player.is_holding(),
 		source_can_execute=func(): return is_lit() and not praying,
 		show_on_source=true, show_on_actor=false,}),
 	]

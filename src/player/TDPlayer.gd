@@ -353,6 +353,9 @@ func on_hurt_box_exited(body):
 func can_grab():
 	return grabbing == null
 
+func is_holding():
+	return not grabbing == null
+
 func grab(node):
 	# Sounds.play(Sounds.S.candleout)
 	grabbing = node

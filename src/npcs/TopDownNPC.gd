@@ -137,46 +137,29 @@ func _on_transit(label):
 ## actions #########################################################
 
 var actions = [
-	Action.mk({
-		label="Call",
-		fn=follow_player,
-		show_on_source=true, show_on_actor=false,
-		source_can_execute=func():
-		return can_be_called and following == null and grabbed_by == null and not machine.state.name in ["Thrown"] and not is_dead,
-		}),
+	# Action.mk({
+	# 	label="Call",
+	# 	fn=follow_player,
+	# 	show_on_source=true, show_on_actor=false,
+	# 	source_can_execute=func():
+	# 	return can_be_called and following == null and grabbed_by == null and not machine.state.name in ["Thrown"] and not is_dead,
+	# 	}),
 	Action.mk({
 		label="Grab",
 		fn=grabbed_by_player,
 		show_on_source=true, show_on_actor=false,
-		maximum_distance=50.0,
-		source_can_execute=func(): return can_be_grabbed_thrown and following != null,
-		actor_can_execute=func(player):
-		return \
-		# player not moving
-		player.move_vector.length() <= 0.1 \
-		and following == player and player.can_grab() and not is_dead,
+		source_can_execute=func(): return not is_dead and can_be_grabbed_thrown and \
+			not machine.state.name in ["Thrown"],
+		actor_can_execute=func(player): return player.can_grab(),
 		}),
 	Action.mk({
 		label="Throw",
 		show_on_source=true, show_on_actor=false,
 		fn=thrown_by_player,
-		source_can_execute=func(): return can_be_grabbed_thrown and grabbed_by != null,
-		actor_can_execute=func(player): return player.grabbing == self and not is_dead,
+		source_can_execute=func(): return can_be_grabbed_thrown and grabbed_by != null and not is_dead,
+		actor_can_execute=func(player): return player.grabbing == self,
 		})
 	]
-
-## hotel ###########################################################
-
-func hotel_data():
-	var d = {health=health, name=name, is_dead=is_dead}
-	if not display_name in ["", null]:
-		d["display_name"] = display_name
-	return d
-
-func check_out(data):
-	health = U.get_(data, "health", initial_health)
-	is_dead = U.get_(data, "is_dead", is_dead)
-	display_name = U.get_(data, "display_name", display_name)
 
 ## collision ###########################################################
 
