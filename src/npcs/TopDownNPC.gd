@@ -297,7 +297,7 @@ func stamp(opts={}):
 	new_anim.global_position = global_position + anim.position
 	U.add_child_to_level(self, new_anim)
 
-	var ttl = opts.get("ttl", 0.5)
+	var ttl = opts.get("ttl", 0.2)
 	if ttl > 0:
 		var t = create_tween()
 		t.tween_property(new_anim, "scale", Vector2(new_scale, new_scale), ttl)
